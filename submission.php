@@ -4,9 +4,9 @@
   $site = new Config();
   $conn = $site->getDB();
 
-  $name     = preg_replace('/[^[:alpha:]\s+]/', '',$_POST['name']);
-  $username = preg_replace('/[^[:alpha:]\s+]/', '',$_POST['username']);
-  $password = preg_replace('/[^[:alpha:]\s+]/', '',$_POST['password']);
+  $name     = $_POST['name'];
+  $username = $_POST['username'];
+  $password = md5($_POST['password']);
 
   $response = array();
 
@@ -16,11 +16,6 @@
 
   if ($result->num_rows > 0) {
     $response['error'] = "Usuário já cadastrado";
-    exit(json_encode($response));
-  }
-
-  if($name === "" || $username === "" || $password === ""){
-    $response['error'] = "Dados inválidos";
     exit(json_encode($response));
   }
 

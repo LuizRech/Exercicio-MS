@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+  color: white;
 }
 
 input {
@@ -43,7 +44,7 @@ h1 {
   justify-content: center;
 }
 
-.registerContent {
+.registerContent, .loginContent {
   background-color: rgba(255, 255, 255, 0.5);
   border: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
@@ -56,7 +57,7 @@ h1 {
   flex-direction: column;
 }
 
-.formRegister {
+.formRegister, .formLogin {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
