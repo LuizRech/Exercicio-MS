@@ -1,5 +1,5 @@
 <?php 
-  include('./db/config.php');
+  include('./config/db.php');
 
   $site = new Config();
   $conn = $site->getDB();
@@ -16,14 +16,16 @@
     AND password = '".$password."'";
 
   $result = $conn->query($sql);
-
+ 
   if ($result->num_rows === 1) {
     if ( session_status() !== PHP_SESSION_ACTIVE ){
       session_start();
     }
 
-    $_SESSION['name'] = $name;
-    $_SESSION['username'] = $username;
+    $queryReturn = $result->fetch_assoc();
+
+    $_SESSION['name'] = $queryReturn['name'];
+    $_SESSION['username'] = $queryReturn['username'];
 
     $response['success'] = "usuarioLogado";
     exit(json_encode($response));

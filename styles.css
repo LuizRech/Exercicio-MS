@@ -6,6 +6,17 @@
   color: white;
 }
 
+body{
+  background-image: url('./assets/bg2.jpg');
+  background-position: center center;
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+
 input {
   width: 250px;
   height: 35px;
@@ -16,23 +27,18 @@ input {
   color: #767676;
 }
 
+.topo {
+  display: flex;
+  justify-content: space-around;
+  padding: 35px 20%;
+}
+
 .btnSubmit {
   cursor:pointer;
 }
 
 .btnSubmit:hover {
   background-color: aliceblue;
-}
-
-body{
-  background-image: url('./assets/bg2.jpg');
-  background-position: center center;
-  background-size: cover;
-}
-
-h1 {
-  text-align: center;
-  color: white;
 }
 
 .container {

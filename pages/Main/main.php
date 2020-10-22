@@ -1,13 +1,7 @@
 <?php   
-  session_start();
-
-  //Verifica se está logado
-  $valor = isset($_SESSION['name']) ? 'S' : 'N';
-  if($valor === "N"){
-    header("Location: http://localhost/www/exercicio");   
-  }
+  include('../../config/checkSessions.php');
+  $sessions = new CheckSession();
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">

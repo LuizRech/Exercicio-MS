@@ -1,5 +1,5 @@
 <?php
-  include('./db/config.php');
+  include('./config/db.php');
   $site = new Config();
   $conn = $site->getDB();
 
@@ -17,12 +17,15 @@
 
 </head>
 <body>
-  <div id="register">
-    registrar
+  <div class="topo">
+    <div id="register">
+      register
+    </div>
+    <div id="login">
+      login
+    </div>
   </div>
-  <div id="login">
-    login
-  </div>
+  
   <div class="container">
     <!--REGISTRO-->
     <div class="registerContent" id="registerContent">
@@ -52,11 +55,11 @@
 
       <form method="POST" class="formLogin" id="formLogin">
         <div class="username">
-          <input type="text" name="username" id="username" placeholder="Username"required>
+          <input type="text" name="usernameLogin" id="usernameLogin" placeholder="Username"required>
         </div>
         
         <div class="password">
-          <input type="password" name="password" id="password" placeholder="Password" required>
+          <input type="password" name="passwordLogin" id="passwordLogin" placeholder="Password" required>
         </div>
 
         <input class="btnSubmit" type="submit">

@@ -8,7 +8,7 @@ $('#formRegister').on('submit',function(e){
     $.ajax({
         type     : "POST",
         cache    : false,
-        url      : "submission.php",
+        url      : "register.php",
         data     : {
             name: $("#name").val(),
             username: $("#username").val(),
@@ -16,7 +16,6 @@ $('#formRegister').on('submit',function(e){
         },
         success: function(data) {
             var response = JSON.parse(data);
-            console.log(response);
             if (response['success']) {
                 //Caso valide o usuário, é direcionado para a página Main
                 window.location.replace("http://localhost/www/exercicio/pages/Main/main.php");
@@ -37,12 +36,11 @@ $('#formLogin').on('submit',function(e){
         cache    : false,
         url      : "login.php",
         data     : {
-            username: $("#username").val(),
-            password: $("#password").val()
+            username: $("#usernameLogin").val(),
+            password: $("#passwordLogin").val()
         },
         success: function(data) {
             var response = JSON.parse(data);
-            console.log(response);
             if (response['success']) {
                 //Caso valide o usuário, é direcionado para a página Main
                 window.location.replace("http://localhost/www/exercicio/pages/Main/main.php");
@@ -51,9 +49,10 @@ $('#formLogin').on('submit',function(e){
             }
         }
     });
-
 });
 
+
+//Troca de telas entre register e login
 $("#login").click(function(){
     $("#registerContent").hide();
     $("#loginContent").show();

@@ -1,5 +1,5 @@
 <?php 
-  include('./db/config.php');
+  include('./config/db.php');
 
   $site = new Config();
   $conn = $site->getDB();

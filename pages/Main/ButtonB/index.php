@@ -1,13 +1,7 @@
-<?php
-  session_start();
-  
-  $valor = isset($_SESSION['name']) ? 'S' : 'N';
-  if($valor === "N"){
-    header("Location: http://localhost/www/exercicio");   
-  }
+<?php   
+  include('../../../config/checkSessions.php');
+  $sessions = new CheckSession();
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
