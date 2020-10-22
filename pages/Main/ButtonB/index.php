@@ -20,12 +20,14 @@
     </div>
 
     <div class="form">
-      <input id="nro" type="number" placeholder="Digite um valor">   
-      <input id="buttonNro" type="button" value="Enviar">
+      <form method="POST" id="formOptionB">
+        <input id="nro" type="number" placeholder="Digite um valor">   
+        <input id="buttonNro" type="submit" value="Enviar">
+      </form>
     </div>
 
     <div id="retorno" class="retorno">
-
+      
     </div>
   </div>
 </body>

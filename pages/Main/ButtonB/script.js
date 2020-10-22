@@ -1,4 +1,24 @@
-$("#buttonNro").click(function(){
+$('#formOptionB').on('submit',function(e){
+  e.preventDefault();
+  $.ajax({
+      type     : "POST",
+      cache    : false,
+      url      : "contador.php",
+      data     : {
+        nro: $("#nro").val()
+      },
+      success: function(data) {
+        var response = JSON.parse(data);
+        $('#retorno').html("");
+       
+        response.map(value => {
+          $("#retorno").append(value +"<br/>");
+        })
+      }
+  });
+});
+
+/*$("#buttonNro").click(function(){
   var val = $("#nro").val();
   $('#retorno').html("");
   
@@ -11,4 +31,4 @@ $("#buttonNro").click(function(){
       
     $("#retorno").append(nstring +"<br/>");
   }
-})
+})*/
